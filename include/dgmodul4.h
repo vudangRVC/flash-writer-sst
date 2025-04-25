@@ -73,6 +73,7 @@
 #define	DEVICE_ID_MT25QU02G		0xBB22
 
 #define	DEVICE_ID_AT25QL128A		0x4218
+#define	DEVICE_ID_W25Q128JVPIQ		0x8901
 
 void InitRPC_Mode(void);
 void mem_copy(uint32_t prgStartAd, uint32_t sector_Ad, uint32_t accessSize);
