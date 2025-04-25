@@ -10,11 +10,7 @@
 #include "cpudrv.h"
 
 /* Use ISS DDR Parameters */
-#if (1)
-#include "param_mc_issi8.c"
-#include "param_swizzle_issi8.c"
-
-#elif (DDR4 == 1)
+#if (DDR4 == 1)
 
 #if (DDR_SIZE_4GB == 1)
 #include "param_mc_C-010_D4-01-1.c"
@@ -24,11 +20,15 @@
 #include "param_mc_C-011_D4-01-1.c"
 #elif (DDR_SIZE_1GB_1PCS == 1)
 #include "param_mc_C-011_D4-01-2.c"
+#elif (DDR_SIZE_900MB_1PCS == 1)
+#include "param_mc_issi8.c"
 #else
 #error "Unknown size."
 #endif
 #if (SWIZZLE_T1C == 1)
 #include "param_swizzle_T1c.c"
+#elif (SWIZZLE_ISSI8 == 1)
+#include "param_swizzle_issi8.c"
 #elif (SWIZZLE_T1BC == 1)
 #include "param_swizzle_T1bc.c"
 #elif (SWIZZLE_T2C == 1)

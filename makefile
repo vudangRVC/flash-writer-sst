@@ -15,8 +15,8 @@ ifeq ("$(BOARD)", "RZG2L_SBC")
 FILENAME_ADD = _RZG2L_SBC
 DEVICE   = RZG2L
 DDR_TYPE = DDR4
-DDR_SIZE = 1GB
-SWIZZLE  = T1C
+DDR_SIZE = 900MB_1PCS
+SWIZZLE  = ISSI8
 else ifeq ("$(BOARD)", "RZG2L_SMARC")
 #--------------------------------------
 # RZ/G2L Smarc board
@@ -272,12 +272,18 @@ endif
 ifeq ("$(DDR_SIZE)", "1GB_1PCS")
 	CFLAGS += -DDDR_SIZE_1GB_1PCS=1
 endif
+ifeq ("$(DDR_SIZE)", "900MB_1PCS")
+	CFLAGS += -DDDR_SIZE_900MB_1PCS=1
+endif
 ifeq ("$(DDR_SIZE)", "512MB_1PCS")
 	CFLAGS += -DDDR_SIZE_512MB_1PCS=1
 endif
 
 ifeq ("$(SWIZZLE)", "T1C")
 	CFLAGS += -DSWIZZLE_T1C=1
+endif
+ifeq ("$(SWIZZLE)", "ISSI8")
+	CFLAGS += -DSWIZZLE_ISSI8=1
 endif
 
 ifeq ("$(SWIZZLE)", "T1BC")
