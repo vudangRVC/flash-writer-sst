@@ -240,6 +240,11 @@ static uint32_t CheckQspiFlashId(void)
 						gQspi_sa_size    = SA_64KB;
 						gQspi_end_addess = TOTAL_SIZE_16MB - 0x8000 - 1;
 				break;
+				case DEVICE_ID_W25Q128JVPIQ:
+						PutStr("W25Q128JVPIQ", 1);
+						gQspi_sa_size    = SA_64KB;
+						gQspi_end_addess = TOTAL_SIZE_128MB - 0x8000 - 1;
+				break;
 				default:
 					ret = -1;
 				break;
